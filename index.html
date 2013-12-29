@@ -9,11 +9,11 @@
   <script src="video-js/video.js"></script>
   <script src="video-js/vjs.youtube.js"></script>
   <script src="video-js/vjs.vimeo.js"></script>
-  <script src="javascript/main.js"></script>
   <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
   <script>
     videojs.options.flash.swf = "video-js/video-js.swf";
   </script>
+  <script src="javascript/main.js"></script>
 
 
 </head>
@@ -29,8 +29,5 @@
 
     <!--SCRAPE MOTIONOGRAPHER DATA FROM YAHOO!!!-->
     <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fmotionographer.com%22%20and%20xpath%3D'%2F%2Fdiv%2Fp%2Fiframe'&format=json&callback=doParseData"></script> 
-
-
-
     </body>
 </html>
