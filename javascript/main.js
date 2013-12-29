@@ -80,10 +80,19 @@ function scrapeMotionographer(){
 	//this call will begin a loop! (because each video instance
 	//spawns a new one upon its death.
 	
-	//playNextVideo();
+	playNextVideo();
 	
 }
 
+function playNextVideo(){
+	var videoInfo = window.myVideoList[0];
+	videojs('vid', { "techOrder": [videoInfo.type], "src": videoInfo.src }).ready(function() {
+		// Cue a video using ended event
+		this.one('ended', function() {
+			//this.src('http://www.youtube.com/watch?v=jofNR_WkoCE');
+		});
+	});
+}
 
 //PARSE SCRAPED URL STRINGS
 function parseSrc(src){
