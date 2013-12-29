@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video-js/video.js"></script>
+  <script src="video-js/vjs.youtube.js"></script>
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "video-js/video-js.swf";
+  </script>
+
+
+</head>
+<body>
+
+    <video id="vid3" src="" class="video-js vjs-default-skin" controls
+           preload="auto" width="640" height="360">
+    </video>
+
+    <script>
+    videojs('vid3', { "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=xjS6SftYQaQ" }).ready(function() {
+      // Cue a video using ended event
+      this.one('ended', function() {
+        this.src('http://www.youtube.com/watch?v=jofNR_WkoCE');
+      });
+    });
+    </script>
+    </body>
+</html>
