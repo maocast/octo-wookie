@@ -84,12 +84,14 @@ function scrapeMotionographer(){
 	
 }
 
+var currentVideo = 0;
 function playNextVideo(){
-	var videoInfo = window.myVideoList[0];
-	videojs('vid', { "techOrder": [videoInfo.type], "src": videoInfo.src }).ready(function() {
+	var videoInfo = window.myVideoList[currentVideo];
+	videojs('vid', { "techOrder": ["youtube", "vimeo"], "src": videoInfo.src }).ready(function() {
 		// Cue a video using ended event
 		this.one('ended', function() {
-			//this.src('http://www.youtube.com/watch?v=jofNR_WkoCE');
+			currentVideo = currentVideo + 1;
+			this.src(window.myVideoList[currentVideo]);
 		});
 	});
 }
