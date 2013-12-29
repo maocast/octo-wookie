@@ -8,6 +8,7 @@
   <!-- video.js must be in the <head> for older IEs to work. -->
   <script src="video-js/video.js"></script>
   <script src="video-js/vjs.youtube.js"></script>
+  <script src="video-js/vjs.vimeo.js"></script>
   <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
   <script>
     videojs.options.flash.swf = "video-js/video-js.swf";
@@ -29,5 +30,24 @@
       });
     });
     </script>
+
+
+     <video id="vid1" src="" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" data-setup='{ "techOrder": ["vimeo"], "src": "https://vimeo.com/63186969", "loop": true, "autoplay": false }'>
+      <p>Video Playback Not Supported</p>
+    </video>
+
+
+    <script>
+      function doParseData(){
+
+        console.log("function goes here!")
+      }
+    </script>
+
+    <!--SCRAPE MOTIONOGRAPHER DATA FROM YAHOO!!!-->
+    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fmotionographer.com%22%20and%20xpath%3D'%2F%2Fdiv%2Fp%2Fiframe'&format=json&callback=doParseData"></script> 
+
+
+
     </body>
 </html>
