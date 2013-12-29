@@ -50,11 +50,11 @@ function doParseData(o){
 function scrapeMotionographer(){
 		
 	alert("PRINTING MOTIONOGRAPHER SCRAPE");
-	var myMoreInfo = document.getElementById("moreInfo");
+	var myExtras = document.getElementById("Extras");
 	
 	totalLinks = window.myVideoList.length;
 	
-	myMoreInfo.insertAdjacentHTML("beforeEnd", "LINKS ARE: </p>");
+	myExtras.insertAdjacentHTML("beforeEnd", "LINKS ARE: </p>");
 	
 	for(x=0;x<totalLinks;x++){
 		//FEED THE PARSED DATA BACK INTO THE GLOBAL LIST
@@ -72,7 +72,7 @@ function scrapeMotionographer(){
 
 		
 		//PRINT CUR ITEM
-		//myMoreInfo.insertAdjacentHTML("beforeEnd", src + " " + width + " " + height + "</p>" );
+		//myExtras.insertAdjacentHTML("beforeEnd", src + " " + width + " " + height + "</p>" );
 		//console.log(window.myVideoList[x].src + "  ***** "  + window.myVideoList[x].size[0] + "  " + window.myVideoList[x].size[1] + "<br>");
 		
 	}
