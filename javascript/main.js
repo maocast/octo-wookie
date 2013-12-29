@@ -1,12 +1,12 @@
 
 
 $( document ).ready(function() {
-  videojs('vid3', { "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=xjS6SftYQaQ" }).ready(function() {
-		// Cue a video using ended event
-		this.one('ended', function() {
-			this.src('http://www.youtube.com/watch?v=jofNR_WkoCE');
-		});
-	});
+ //  videojs('vid3', { "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=xjS6SftYQaQ" }).ready(function() {
+	// 	// Cue a video using ended event
+	// 	this.one('ended', function() {
+	// 		this.src('http://www.youtube.com/watch?v=jofNR_WkoCE');
+	// 	});
+	// });
 });
 
 
@@ -87,11 +87,12 @@ function scrapeMotionographer(){
 var currentVideo = 0;
 function playNextVideo(){
 	var videoInfo = window.myVideoList[currentVideo];
-	videojs('vid', { "techOrder": ["youtube", "vimeo"], "src": videoInfo.src }).ready(function() {
+	videojs('vid', { "techOrder": ["vimeo", "youtube"], "src": videoInfo.src }).ready(function() {
 		// Cue a video using ended event
-		this.one('ended', function() {
+		this.on('ended', function() {
+			//console.log("im done with the video!");
 			currentVideo = currentVideo + 1;
-			this.src(window.myVideoList[currentVideo]);
+			this.src(window.myVideoList[currentVideo].src);
 		});
 	});
 }
